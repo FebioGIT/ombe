@@ -18,12 +18,12 @@ class OnboardingPage extends StatelessWidget {
             children: [
               const Spacer(),
 
-              // ☕ IMAGE (sementara pakai icon dulu)
+              
               const Icon(Icons.local_cafe, size: 140, color: primary),
 
               const SizedBox(height: 40),
 
-              // TITLE
+              
               const Text(
                 "Let’s meet our summer coffee drinks",
                 textAlign: TextAlign.center,
@@ -35,7 +35,7 @@ class OnboardingPage extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              // DESCRIPTION
+              
               const Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 textAlign: TextAlign.center,
@@ -44,7 +44,7 @@ class OnboardingPage extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // DOT INDICATOR
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -56,7 +56,7 @@ class OnboardingPage extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              // BUTTON
+              
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// IMPORT DISESUAIKAN: Mengarah ke halaman DeliveryTrackingPage yang sudah Anda buat sebelumnya
+
 import 'package:ombe_coffee/pages/order/delivery_tracking_page.dart';
 
 class StoreLocationPage extends StatefulWidget {
@@ -11,19 +11,19 @@ class StoreLocationPage extends StatefulWidget {
 }
 
 class _StoreLocationPageState extends State<StoreLocationPage> {
-  final Color primaryGreen = const Color(0xFF00704A); // Hijau tema Ombe
-  final Color directionBlue = const Color(0xFF254EDB); // Biru tombol Directions
+  final Color primaryGreen = const Color(0xFF00704A); 
+  final Color directionBlue = const Color(0xFF254EDB); 
 
   int _activeFilterIndex = 0;
   final List<String> _filters = ["Near Me", "Popular", "Top Rated"];
 
-  // Data dummy toko
+  
   final List<Map<String, dynamic>> _stores = [
     {
       "name": "Centre Point Plaza",
       "hours": "09:00 AM - 10:00 PM",
       "distance": "3,5 Km",
-      "image": "assets/tempat1.png", // Akan menyesuaikan dengan gambar asli Anda nanti
+      "image": "assets/tempat1.png", 
     },
     {
       "name": "Indy Cafe & Roastery",
@@ -36,7 +36,7 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade50, // Latar abu-abu sangat muda
+      backgroundColor: Colors.grey.shade50, 
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -70,14 +70,14 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // --- BAGIAN ATAS (SEARCH & FILTER) ---
+          
           Container(
             color: Colors.white,
             padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Search Bar
+                
                 Container(
                   height: 50,
                   decoration: BoxDecoration(
@@ -97,7 +97,7 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
                 ),
                 const SizedBox(height: 20),
 
-                // Chips / Filters
+                
                 SizedBox(
                   height: 40,
                   child: ListView.builder(
@@ -140,7 +140,7 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
             ),
           ),
 
-          // --- SUBTITLE JUMLAH TOKO ---
+          
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 16),
             child: RichText(
@@ -158,14 +158,14 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
             ),
           ),
 
-          // --- LIST TOKO ---
+          
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               physics: const BouncingScrollPhysics(),
               itemCount: _stores.length,
               itemBuilder: (context, index) {
-                return _buildStoreCard(context, _stores[index]); // Menyisipkan context
+                return _buildStoreCard(context, _stores[index]); 
               },
             ),
           ),
@@ -174,7 +174,7 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
     );
   }
 
-  // --- WIDGET KARTU TOKO ---
+  
   Widget _buildStoreCard(BuildContext context, Map<String, dynamic> store) {
     return Container(
       margin: const EdgeInsets.only(bottom: 24),
@@ -190,12 +190,12 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
         ],
       ),
       child: Stack(
-        clipBehavior: Clip.none, // Mengizinkan tombol melayang melewati batas
+        clipBehavior: Clip.none, 
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Gambar Toko
+              
               ClipRRect(
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
                 child: Image.asset(
@@ -211,7 +211,7 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
                   ),
                 ),
               ),
-              // 2. Info Detail Teks
+              
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -258,10 +258,10 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
             ],
           ),
           
-          // 3. Tombol Directions (Posisi Melayang)
+          
           Positioned(
             right: 16,
-            top: 118, // Diposisikan agar memotong batas gambar dan area putih
+            top: 118, 
             child: ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 backgroundColor: directionBlue,
@@ -278,7 +278,7 @@ class _StoreLocationPageState extends State<StoreLocationPage> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               ),
               onPressed: () {
-                // NAVIGASI BARU: Membuka DeliveryTrackingPage
+                
                 Navigator.push(
                   context,
                   MaterialPageRoute(

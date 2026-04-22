@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// IMPORT HALAMAN ORDER DETAIL
+
 import 'package:ombe_coffee/pages/order/order_detail_page.dart';
 
 class WishlistPage extends StatefulWidget {
@@ -10,7 +10,7 @@ class WishlistPage extends StatefulWidget {
 }
 
 class _WishlistPageState extends State<WishlistPage> {
-  final Color primaryGreen = const Color(0xFF00704A); // Hijau Ombe
+  final Color primaryGreen = const Color(0xFF00704A); 
 
   final List<Map<String, dynamic>> _wishlistItems = [
     {
@@ -79,7 +79,7 @@ class _WishlistPageState extends State<WishlistPage> {
       ),
       body: Column(
         children: [
-          // --- SEARCH BAR ---
+          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Container(
@@ -102,7 +102,7 @@ class _WishlistPageState extends State<WishlistPage> {
           ),
           const SizedBox(height: 10),
 
-          // --- WISHLIST ITEMS ---
+          
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -110,7 +110,7 @@ class _WishlistPageState extends State<WishlistPage> {
               itemCount: _wishlistItems.length,
               itemBuilder: (context, index) {
                 final item = _wishlistItems[index];
-                // Jangan lupa lempar context ke fungsi ini
+                
                 return _buildWishlistCard(context, item, index);
               },
             ),
@@ -120,10 +120,10 @@ class _WishlistPageState extends State<WishlistPage> {
     );
   }
 
-  // --- WIDGET KARTU PRODUK ---
+  
   Widget _buildWishlistCard(BuildContext context, Map<String, dynamic> item, int index) {
     return GestureDetector(
-      // --- NAVIGASI KETIKA PRODUK DIKLIK ---
+      
       onTap: () {
         Navigator.push(
           context,
@@ -196,7 +196,7 @@ class _WishlistPageState extends State<WishlistPage> {
                           color: Colors.black87,
                         ),
                       ),
-                      // Tombol Hati (Favorite)
+                      
                       GestureDetector(
                         onTap: () {
                           setState(() {

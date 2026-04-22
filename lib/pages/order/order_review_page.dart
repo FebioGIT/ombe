@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// PASTIKAN IMPORT INI MENGARAH KE HOME PAGE ANDA
-// Jika home_page.dart Anda berada di dalam folder lib/pages/home/
+
+
 import 'package:ombe_coffee/pages/home/home_page.dart';
 
 class OrderReviewPage extends StatefulWidget {
@@ -11,17 +11,17 @@ class OrderReviewPage extends StatefulWidget {
 }
 
 class _OrderReviewPageState extends State<OrderReviewPage> {
-  final Color primaryGreen = const Color(0xFF00704A); // Hijau utama Ombe
-  final Color starOrange = const Color(0xFFF78B33); // Oranye untuk bintang
+  final Color primaryGreen = const Color(0xFF00704A); 
+  final Color starOrange = const Color(0xFFF78B33); 
 
-  int _rating = 4; // Default rating 4.0 sesuai gambar
+  int _rating = 4; 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      // --- APP BAR ---
+      
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -55,7 +55,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
 
       body: Column(
         children: [
-          // --- BAGIAN ATAS: INFO PRODUK ---
+          
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: Row(
@@ -64,7 +64,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Image.asset(
-                    'assets/latte.webp', // Ganti dengan aset gambar kopi Anda
+                    'assets/latte.webp', 
                     width: 80,
                     height: 80,
                     fit: BoxFit.cover,
@@ -105,11 +105,11 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
             ),
           ),
 
-          // --- BAGIAN BAWAH: AREA REVIEW ---
+          
           Expanded(
             child: Container(
               width: double.infinity,
-              color: const Color(0xFFF9F9F9), // Latar abu-abu sangat terang
+              color: const Color(0xFFF9F9F9), 
               padding: const EdgeInsets.all(24.0),
               child: SingleChildScrollView(
                 child: Column(
@@ -135,7 +135,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
                     ),
                     const SizedBox(height: 30),
 
-                    // Angka Rating
+                    
                     Text(
                       "$_rating.0",
                       style: const TextStyle(
@@ -146,7 +146,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
                     ),
                     const SizedBox(height: 10),
 
-                    // Bintang Rating (Interaktif)
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(5, (index) {
@@ -176,7 +176,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
                     ),
                     const SizedBox(height: 30),
 
-                    // Text Field (Area Teks Review)
+                    
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -184,7 +184,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
                         border: Border.all(color: Colors.grey.shade200),
                       ),
                       child: TextField(
-                        maxLines: 4, // Membuatnya menjadi text area
+                        maxLines: 4, 
                         decoration: InputDecoration(
                           hintText: "Write your review here",
                           hintStyle: TextStyle(color: Colors.grey.shade400),
@@ -195,7 +195,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
                     ),
                     const SizedBox(height: 30),
 
-                    // Tombol SEND
+                    
                     SizedBox(
                       width: double.infinity,
                       height: 55,
@@ -208,12 +208,12 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
                           elevation: 0,
                         ),
                         onPressed: () {
-                          // KEMBALI KE HOME PAGE DAN MEMBERSIHKAN HISTORY HALAMAN SEBELUMNYA
+                          
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  const HomePage(), // Pastikan nama class HomePage Anda benar
+                                  const HomePage(), 
                             ),
                             (route) => false,
                           );

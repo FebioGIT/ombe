@@ -1,7 +1,7 @@
-import 'dart:ui'; // Wajib untuk efek blur bayangan
+import 'dart:ui'; 
 import 'package:flutter/material.dart';
 
-// IMPORT DISESUAIKAN: Mengarah ke checkout_page.dart di dalam folder order
+
 import 'package:ombe_coffee/pages/order/checkout_page.dart';
 
 class OrderDetailPage extends StatefulWidget {
@@ -15,13 +15,13 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
   int qty = 3;
   double selectedSize = 1;
 
-  // Variabel untuk menyimpan status Bookmark
+  
   bool isSaved = false;
 
   final double price = 5.8;
   final Color primaryGreen = const Color(
     0xFF00704A,
-  ); // Disesuaikan dengan warna Ombe Coffee
+  ); 
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      // --- TOMBOL BAWAH ---
+      
       bottomNavigationBar: Container(
         color: Colors.white,
         padding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
@@ -76,15 +76,15 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
         ),
       ),
 
-      // --- KONTEN UTAMA ---
+      
       body: SingleChildScrollView(
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            // 1. BACKGROUND HIJAU
+            
             Container(height: 320, color: primaryGreen),
 
-            // 2. GAMBAR KOPI DENGAN BAYANGAN REALISTIS
+            
             Positioned(
               top: 40,
               left: 0,
@@ -95,7 +95,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      // Layer Bayangan (Drop Shadow)
+                      
                       Transform.translate(
                         offset: const Offset(5, 15),
                         child: ImageFiltered(
@@ -108,7 +108,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                               Color(0x66000000),
                               BlendMode.srcATop,
                             ),
-                            // Tambahan errorBuilder untuk jaga-jaga jika gambar belum ada
+                            
                             child: Image.asset(
                               'assets/backheader.png',
                               height: 260,
@@ -119,7 +119,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                           ),
                         ),
                       ),
-                      // Layer Gambar Asli
+                      
                       Image.asset(
                         'assets/backheader.png',
                         height: 260,
@@ -133,7 +133,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
               ),
             ),
 
-            // 3. WHITE SHEET (Detail Pesanan)
+            
             Container(
               margin: const EdgeInsets.only(top: 280),
               decoration: const BoxDecoration(
@@ -315,7 +315,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
               ),
             ),
 
-            // 4. APP BAR & BOOKMARK INTERAKTIF
+            
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -348,14 +348,14 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                       ),
                     ),
 
-                    // TOMBOL BOOKMARK
+                    
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          isSaved = !isSaved; // Toggle status
+                          isSaved = !isSaved; 
                         });
 
-                        // Munculkan notifikasi pop-up kecil
+                        
                         ScaffoldMessenger.of(context).clearSnackBars();
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -384,7 +384,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
               ),
             ),
 
-            // 5. BADGE RATING
+            
             Positioned(
               top: 245,
               right: 32,

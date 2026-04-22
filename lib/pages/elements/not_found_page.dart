@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});
 
-  final Color surfacePink = const Color(0xFFFAF0F3); // Pink muda sesuai desain
+  final Color surfacePink = const Color(0xFFFAF0F3); 
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class NotFoundPage extends StatelessWidget {
             fontSize: 20,
           ),
         ),
-        titleSpacing: 0, // Agar teks rapat ke kiri dekat panah
+        titleSpacing: 0, 
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),

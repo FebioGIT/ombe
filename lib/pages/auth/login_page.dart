@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 const SizedBox(height: 20),
 
-                // ☕ LOGO + TITLE
+                
                 Row(
                   children: const [
                     Icon(Icons.local_cafe, color: primary),
@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 30),
 
-                // TITLE
+                
                 const Text(
                   "Sign In",
                   style: TextStyle(
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 30),
 
-                // USERNAME
+                
                 const Text("Username", style: TextStyle(color: Colors.grey)),
                 const SizedBox(height: 8),
 
@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 20),
 
-                // PASSWORD
+                
                 const Text("Password", style: TextStyle(color: Colors.grey)),
                 const SizedBox(height: 8),
 
@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 30),
 
-                // 🔘 LOGIN BUTTON
+                
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 16),
 
-                // 🔗 FORGOT PASSWORD
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 30),
 
-                // TEXT
+                
                 const Center(
                   child: Text(
                     "Dont have any account?",
@@ -172,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 16),
 
-                // 🔘 CREATE ACCOUNT
+                
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(

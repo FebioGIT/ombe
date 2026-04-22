@@ -10,7 +10,7 @@ class BlogDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        // Tombol Back bulat sesuai referensi
+        
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
@@ -42,7 +42,7 @@ class BlogDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Judul Artikel
+            
             const Text(
               "Nature's Ingredients",
               style: TextStyle(
@@ -54,17 +54,17 @@ class BlogDetailPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // GAMBAR DARI ASSETS
+            
             ClipRRect(
               borderRadius: BorderRadius.circular(
                 0,
-              ), // Sesuai gambar: kotak/sharp
+              ), 
               child: Image.asset(
-                "assets/blogdetail.png", // <--- Pastikan file ini ada di folder assets
+                "assets/blogdetail.png", 
                 width: double.infinity,
                 height: 300,
                 fit: BoxFit.cover,
-                // Handle jika gambar tidak ditemukan
+                
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
                     height: 300,
@@ -76,7 +76,7 @@ class BlogDetailPage extends StatelessWidget {
             ),
             const SizedBox(height: 25),
 
-            // Konten Teks
+            
             const Text(
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker.",
               style: TextStyle(

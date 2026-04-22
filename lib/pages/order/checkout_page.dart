@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// IMPORT DISESUAIKAN: Mengarah ke halaman Delivery Tracking yang sudah kita buat sebelumnya
+
 import 'package:ombe_coffee/pages/order/delivery_tracking_page.dart';
 
 class CheckoutPage extends StatefulWidget {
@@ -11,16 +11,16 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
-  // WARNA DISESUAIKAN dengan tema Ombe Coffee
+  
   final Color primaryGreen = const Color(0xFF00704A);
 
-  // --- STATE MANAGEMENT ---
-  int _currentStep = 2; // Default ke 2 agar langsung menampilkan Coupon Apply
   
-  // State untuk Payment
+  int _currentStep = 2; 
+  
+  
   String _selectedPaymentMethod = 'Virtual Account'; 
   
-  // State untuk Shipping
+  
   String _selectedCountry = 'Choose your country';
   bool _isSaveAddress = false;
 
@@ -43,7 +43,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 children: [
-                  // Logika Navigasi Konten
+                  
                   if (_currentStep == 0) 
                     ..._buildPaymentMethodList()
                   else if (_currentStep == 1) 
@@ -61,16 +61,16 @@ class _CheckoutPageState extends State<CheckoutPage> {
     );
   }
 
-  // ====================================================================
-  // STEPPER NAVIGATION (DINAMIS & BISA DIKLIK)
-  // ====================================================================
+  
+  
+  
 
   Widget _buildStepper() => Column(
     children: [
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          // Navigasi Payment Method
+          
           GestureDetector(
             onTap: () => setState(() => _currentStep = 0),
             child: Text(
@@ -82,7 +82,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
           ),
           
-          // Navigasi Shipping Address
+          
           GestureDetector(
             onTap: () => setState(() => _currentStep = 1),
             child: Text(
@@ -94,7 +94,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
           ),
           
-          // Navigasi Coupon
+          
           GestureDetector(
             onTap: () => setState(() => _currentStep = 2),
             child: Text(
@@ -112,7 +112,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
         alignment: Alignment.center,
         children: [
           Container(height: 2, color: primaryGreen.withOpacity(0.2), margin: const EdgeInsets.symmetric(horizontal: 50)),
-          // Animasi bulatan hijau
+          
           AnimatedAlign(
             duration: const Duration(milliseconds: 300),
             alignment: _currentStep == 0 
@@ -135,9 +135,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
     ],
   );
 
-  // ====================================================================
-  // 3. KONTEN COUPON APPLY (_currentStep == 2)
-  // ====================================================================
+  
+  
+  
 
   Widget _buildCouponForm() {
     return Column(
@@ -149,9 +149,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
     );
   }
 
-  // ====================================================================
-  // 1. KONTEN SHIPPING ADDRESS (_currentStep == 1)
-  // ====================================================================
+  
+  
+  
 
   Widget _buildShippingForm() {
     return Column(
@@ -177,9 +177,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
     );
   }
 
-  // ====================================================================
-  // 0. KONTEN PAYMENT METHOD (_currentStep == 0)
-  // ====================================================================
+  
+  
+  
 
   List<Widget> _buildPaymentMethodList() {
     return [
@@ -213,9 +213,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
     );
   }
 
-  // ====================================================================
-  // KOMPONEN PENDUKUNG UI
-  // ====================================================================
+  
+  
+  
 
   Widget _buildPaymentOption({required String title, required String value, required Widget trailing, VoidCallback? onTapOverride}) {
     bool isSelected = _selectedPaymentMethod == value;
@@ -330,7 +330,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
           icon: Icon(Icons.keyboard_arrow_down, color: primaryGreen),
           onChanged: (val) => setState(() => _selectedCountry = val!),
           items: ['Choose your country', 'USA', 'China', 'India']
-              // Menambahkan <String> agar aman dari error tipe data
+              
               .map((e) => DropdownMenuItem<String>(
                   value: e, 
                   child: Text(e, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500))
@@ -417,11 +417,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
           ),
           onPressed: () {
             setState(() {
-              // Jika ditekan NEXT, pindah step ke kanan, atau beri alert jika sudah selesai
+              
               if (_currentStep < 2) {
                 _currentStep++;
               } else {
-                // NAVIGASI DISESUAIKAN ke DeliveryTrackingPage
+                
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const DeliveryTrackingPage()),

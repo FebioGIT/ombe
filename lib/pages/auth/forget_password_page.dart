@@ -26,7 +26,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
             children: [
               const SizedBox(height: 20),
 
-              // ☕ LOGO
+              
               Row(
                 children: const [
                   Icon(Icons.local_cafe, color: primary),
@@ -43,7 +43,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
               const SizedBox(height: 30),
 
-              // TITLE
+              
               const Text(
                 "Forget Password",
                 style: TextStyle(
@@ -61,7 +61,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
               const SizedBox(height: 30),
 
-              // PASSWORD
+              
               const Text("Password", style: TextStyle(color: Colors.grey)),
               const SizedBox(height: 8),
 
@@ -87,7 +87,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
               const SizedBox(height: 30),
 
-              // 🔘 SUBMIT BUTTON
+              
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -99,7 +99,6 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     ),
                   ),
                   onPressed: () {
-                    // 🔥 langsung ke Home & hapus semua route sebelumnya
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
@@ -120,7 +119,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
               const SizedBox(height: 20),
 
-              // BACK TO LOGIN
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -143,6 +142,6 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
           ),
         ),
       ),
-    );
+    );  
   }
 }

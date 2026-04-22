@@ -10,17 +10,18 @@ import 'package:ombe_coffee/pages/wishlist/wishlist_page.dart';
 import 'package:ombe_coffee/pages/profile/profile_page.dart';
 import 'package:ombe_coffee/pages/order/order_detail_page.dart';
 import 'package:ombe_coffee/pages/order/delivery_tracking_page.dart';
-import 'package:ombe_coffee/pages/message/message_page.dart'; // Sesuaikan path jika berbeda
-import 'package:ombe_coffee/pages/order/order_review_page.dart'; // Sesuaikan folder Anda
+import 'package:ombe_coffee/pages/message/message_page.dart'; 
+import 'package:ombe_coffee/pages/order/order_review_page.dart'; 
 import 'package:ombe_coffee/pages/auth/login_choice_page.dart';
 import 'products_page.dart';
+import 'package:ombe_coffee/pages/settings/settings_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // ScaffoldKey untuk membuka drawer dari tombol custom
+    
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     final List<Map<String, dynamic>> categories = [
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
-      // --- DRAWER SECTION ---
+      
       drawer: Drawer(
         backgroundColor: Colors.white,
         child: SafeArea(
@@ -133,7 +134,7 @@ class HomePage extends StatelessWidget {
                       Icons.favorite_border,
                       "Wishlist",
                       onTap: () {
-                        Navigator.pop(context); // Menutup drawer
+                        Navigator.pop(context); 
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -175,7 +176,7 @@ class HomePage extends StatelessWidget {
                       Icons.history,
                       "Delivery Tracking",
                       onTap: () {
-                        Navigator.pop(context); // Tutup sidebar
+                        Navigator.pop(context); 
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -198,7 +199,7 @@ class HomePage extends StatelessWidget {
                         );
                       },
                     ),
-                    // NAVIGASI PROFIL DITAMBAHKAN DI SINI
+                    
                     _buildDrawerItem(
                       context,
                       Icons.person_outline,
@@ -218,7 +219,7 @@ class HomePage extends StatelessWidget {
                       Icons.star_border,
                       "Order Review",
                       onTap: () {
-                        Navigator.pop(context); // Tutup sidebar
+                        Navigator.pop(context); 
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -232,12 +233,12 @@ class HomePage extends StatelessWidget {
                       Icons.chat_bubble_outline,
                       "Message",
                       onTap: () {
-                        Navigator.pop(context); // Tutup sidebar dulu
+                        Navigator.pop(context); 
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                const MessagePage(), // Pakai class ini
+                                const MessagePage(), 
                           ),
                         );
                       },
@@ -256,9 +257,24 @@ class HomePage extends StatelessWidget {
                         );
                       },
                     ),
+                    _buildDrawerItem(
+              context,
+              Icons.settings_outlined,
+              "Settings",
+              onTap: () {
+                Navigator.pop(context); // Tutup sidebar
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsPage(),
+                  ),
+                );
+              },
+            ),
                   ],
                 ),
               ),
+              
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
@@ -269,18 +285,18 @@ class HomePage extends StatelessWidget {
                       "Logout",
                       color: Colors.red,
                       onTap: () {
-                        // Menutup sidebar terlebih dahulu
+                        
                         Navigator.pop(context);
 
-                        // Navigasi ke halaman pilihan login dan menghapus semua tumpukan halaman sebelumnya
+                        
                         Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                const LoginChoicePage(), // Pastikan nama class-nya benar
+                                const LoginChoicePage(), 
                           ),
                           (route) =>
-                              false, // Parameter ini memastikan user tidak bisa menekan tombol 'back' untuk kembali ke Home
+                              false, 
                         );
                       },
                     ),
@@ -303,7 +319,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      // --- BODY SECTION ---
+      
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -311,7 +327,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              // Header: Greeting & Action Buttons
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -356,7 +372,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 25),
-              // Search Bar
+              
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
@@ -373,7 +389,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 25),
-              // Promo Cards Horizontal
+              
               SizedBox(
                 height: 280,
                 child: ListView(
@@ -413,7 +429,7 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 15),
-              // Categories Horizontal
+              
               SizedBox(
                 height: 80,
                 child: ListView.builder(
@@ -423,16 +439,16 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final item = categories[index];
                     return _buildCategoryCard(
-                      context, // Jangan lupa context ini
-                      item['icon'] as IconData, // <-- Tambahkan 'as IconData'
-                      item['title'] as String,  // <-- Tambahkan 'as String'
-                      item['count'] as String,  // <-- Tambahkan 'as String'
+                      context, 
+                      item['icon'] as IconData, 
+                      item['title'] as String,  
+                      item['count'] as String,  
                     );
                   },
                 ),
               ),
               const SizedBox(height: 25),
-              // Featured Section
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -473,7 +489,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // --- HELPER WIDGETS ---
+  
 
   Widget _buildDrawerItem(
     BuildContext context,
@@ -580,14 +596,14 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildCategoryCard(
-    BuildContext context, // Pastikan ada parameter context
+    BuildContext context, 
     IconData icon,
     String title,
     String count,
   ) {
     return GestureDetector(
       onTap: () {
-        // NAVIGASI KE PRODUCTS PAGE
+        
         Navigator.push(
           context,
           MaterialPageRoute(

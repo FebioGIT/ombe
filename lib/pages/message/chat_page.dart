@@ -43,7 +43,7 @@ class ChatPage extends StatelessWidget {
               children: [
                 _buildChatBubble("Hi, Kate", true),
                 _buildChatBubble("How are you?", true),
-                // Panggilan ke fungsi avatar tetap sama
+                
                 _buildChatBubbleWithAvatar(
                   "Hi, I am good!",
                   false,
@@ -58,7 +58,7 @@ class ChatPage extends StatelessWidget {
               ],
             ),
           ),
-          // Input Message
+          
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
@@ -117,16 +117,16 @@ class ChatPage extends StatelessWidget {
     );
   }
 
-  // DI SINI LETAK PERBAIKANNYA
+  
   Widget _buildChatBubbleWithAvatar(String text, bool isMe, String img) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment:
-          CrossAxisAlignment.end, // Agar avatar sejajar di bawah teks
+          CrossAxisAlignment.end, 
       children: [
         CircleAvatar(radius: 15, backgroundImage: AssetImage(img)),
         const SizedBox(width: 10),
-        // WIDGET FLEXIBLE INI YANG MENCEGAH OVERFLOW
+        
         Flexible(child: _buildChatBubble(text, isMe)),
       ],
     );

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
-  final Color primaryGreen = const Color(0xFF00704A); // Warna hijau khas Ombe Coffee
+  final Color primaryGreen = const Color(0xFF00704A); 
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class ProfilePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.edit_outlined, color: Colors.black87, size: 28),
             onPressed: () {
-              // Aksi untuk edit profil
+              
             },
           ),
           const SizedBox(width: 8),
@@ -46,12 +46,12 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            // --- HEADER: AVATAR & NAMA ---
+            
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(60),
                 child: Image.asset(
-                  'assets/kurir.webp', // Ganti dengan path foto profil Anda
+                  'assets/kurir.webp', 
                   width: 110,
                   height: 110,
                   fit: BoxFit.cover,
@@ -84,7 +84,7 @@ class ProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 40),
 
-            // --- INFORMASI KONTAK ---
+            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
@@ -109,7 +109,7 @@ class ProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // --- MOST ORDERED SECTION ---
+            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Align(
@@ -126,7 +126,7 @@ class ProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             
-            // List Horizontal Most Ordered
+            
             SizedBox(
               height: 110,
               child: ListView(
@@ -137,12 +137,12 @@ class ProfilePage extends StatelessWidget {
                   _buildMostOrderedCard(
                     "Creamy Latte\nCoffee",
                     "Beverages",
-                    "assets/kopi2.png", // Ganti dengan path gambar kopi Anda
+                    "assets/kopi2.png", 
                   ),
                   _buildMostOrderedCard(
                     "Special Mocha\nBlend",
                     "Beverages",
-                    "assets/kopi2.png", // Ganti dengan path gambar kopi Anda
+                    "assets/kopi2.png", 
                   ),
                 ],
               ),
@@ -154,9 +154,9 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  // --- WIDGET HELPER ---
+  
 
-  // Komponen untuk List Kontak (No HP, Email, Lokasi)
+  
   Widget _buildContactItem({required IconData icon, required String label, required String value}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 24),
@@ -167,7 +167,7 @@ class ProfilePage extends StatelessWidget {
             height: 55,
             width: 55,
             decoration: BoxDecoration(
-              color: Colors.grey.shade50, // Abu-abu sangat terang
+              color: Colors.grey.shade50, 
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: primaryGreen, size: 26),
@@ -203,7 +203,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  // Komponen untuk Kartu Most Ordered berwarna hijau
+  
   Widget _buildMostOrderedCard(String title, String category, String imagePath) {
     return Container(
       width: 250,

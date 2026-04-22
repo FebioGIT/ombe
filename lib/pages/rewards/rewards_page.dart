@@ -8,10 +8,10 @@ class RewardsPage extends StatefulWidget {
 }
 
 class _RewardsPageState extends State<RewardsPage> {
-  // 1. STATE VARIABEL: Untuk menyimpan pilihan saat ini
+  
   String _selectedSort = 'Newest';
 
-  // 2. DATA DUMMY: Tanggal saya bedakan sedikit agar efek sorting terlihat
+  
   List<Map<String, String>> historyData = [
     {
       "title": "Extra Deluxe Gayo Coffee Packages",
@@ -35,15 +35,15 @@ class _RewardsPageState extends State<RewardsPage> {
     },
   ];
 
-  // Fungsi untuk mensortir data
+  
   void _sortData(String sortType) {
     setState(() {
       _selectedSort = sortType;
       if (sortType == 'Newest') {
-        // Urutkan dari tanggal terbaru (asumsi data default sudah urut terbaru)
+        
         historyData.sort((a, b) => b['date']!.compareTo(a['date']!));
       } else {
-        // Urutkan dari tanggal terlama
+        
         historyData.sort((a, b) => a['date']!.compareTo(b['date']!));
       }
     });
@@ -95,7 +95,7 @@ class _RewardsPageState extends State<RewardsPage> {
     );
   }
 
-  // --- WIDGET KOMPONEN ---
+  
 
   Widget _buildPointsCard() {
     return Container(
@@ -189,7 +189,7 @@ class _RewardsPageState extends State<RewardsPage> {
           "History Reward",
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
-        // 3. DROPDOWN MENU PENGGANTI TEXT STATIS
+        
         DropdownButtonHideUnderline(
           child: DropdownButton<String>(
             value: _selectedSort,
@@ -207,7 +207,7 @@ class _RewardsPageState extends State<RewardsPage> {
             }).toList(),
             onChanged: (String? newValue) {
               if (newValue != null) {
-                _sortData(newValue); // Panggil fungsi sortir saat diklik
+                _sortData(newValue); 
               }
             },
           ),

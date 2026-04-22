@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// ONBOARDING
+
 import 'pages/onboarding/onboarding_page.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Ombe Coffee',
 
-      // 🌙 THEME GLOBAL (biar konsisten)
+      
       theme: ThemeData(
         fontFamily: 'Roboto',
 
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      // 🚀 ENTRY POINT APP
+      
       home: const OnboardingPage(),
     );
   }

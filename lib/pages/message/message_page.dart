@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// IMPORT FILE CHAT DETAIL (Pastikan Anda membuat file chat_page.dart setelah ini)
+
 import 'chat_page.dart';
 
 class MessagePage extends StatelessWidget {
@@ -9,7 +9,7 @@ class MessagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Data dummy daftar pesan sesuai gambar
+    
     final List<Map<String, dynamic>> chatList = [
       {
         "name": "Kevin Louis",
@@ -78,7 +78,7 @@ class MessagePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Search Bar
+          
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
@@ -96,7 +96,7 @@ class MessagePage extends StatelessWidget {
               ),
             ),
           ),
-          // List Chat
+          
           Expanded(
             child: ListView.builder(
               itemCount: chatList.length,
@@ -115,7 +115,7 @@ class MessagePage extends StatelessWidget {
   Widget _buildChatItem(BuildContext context, Map<String, dynamic> item) {
     return GestureDetector(
       onTap: () {
-        // NAVIGASI KE HALAMAN ISI CHAT (ChatPage)
+        
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const ChatPage()),
@@ -137,7 +137,7 @@ class MessagePage extends StatelessWidget {
         ),
         child: Row(
           children: [
-            // Avatar dengan status online
+            
             Stack(
               children: [
                 const CircleAvatar(
@@ -161,7 +161,7 @@ class MessagePage extends StatelessWidget {
               ],
             ),
             const SizedBox(width: 15),
-            // Nama & Pesan
+            
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,7 +183,7 @@ class MessagePage extends StatelessWidget {
                 ],
               ),
             ),
-            // Waktu & Status
+            
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [

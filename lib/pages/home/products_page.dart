@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// --- MODEL DATA PRODUK ---
+
 class Product {
   final String name;
   final String description;
@@ -35,7 +35,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
   final Color starOrange = const Color(0xFFF78B33);
   final Color lightGreenBtn = const Color(0xFFE0F2F1);
 
-  // Daftar kategori yang tersedia
+  
   final List<String> categories = [
     "Beverages",
     "Foods",
@@ -45,7 +45,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
     "Burger"
   ];
 
-  // Data Dummy Produk
+  
   final List<Product> allProducts = [
     Product(
       name: "Sweet Lemon Indonesian Tea",
@@ -84,7 +84,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    // Menentukan index awal berdasarkan kategori yang diklik dari Home Page
+    
     int initialIndex = categories.indexOf(widget.initialCategory);
     if (initialIndex == -1) initialIndex = 0;
 
@@ -139,7 +139,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
         children: [
           const SizedBox(height: 10),
           
-          // --- SEARCH BAR ---
+          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Container(
@@ -163,7 +163,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
           
           const SizedBox(height: 20),
           
-          // --- TAB BAR KATEGORI ---
+          
           TabBar(
             controller: _tabController,
             isScrollable: true,
@@ -175,7 +175,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
             tabs: categories.map((cat) => Tab(text: cat)).toList(),
           ),
           
-          // --- TAB VIEW ISI PRODUK ---
+          
           Expanded(
             child: TabBarView(
               controller: _tabController,
@@ -207,7 +207,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Gambar & Rating Tag
+          
           Stack(
             clipBehavior: Clip.none,
             children: [
@@ -248,7 +248,7 @@ class _ProductsPageState extends State<ProductsPage> with SingleTickerProviderSt
             ],
           ),
           const SizedBox(width: 25),
-          // Info Teks
+          
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

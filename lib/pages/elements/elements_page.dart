@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-// IMPORT HALAMAN BARU
+
 import 'about_framework7_page.dart';
 import 'not_found_page.dart';
 
 class ElementsPage extends StatelessWidget {
   const ElementsPage({super.key});
 
-  // --- WARNA TEMA ---
-  final Color primaryGreen = const Color(0xFF00704A); // Hijau khas Ombe Coffee
-  final Color surfacePink = const Color(0xFFFAF0F3); // Warna latar pink/abu muda
+  
+  final Color primaryGreen = const Color(0xFF00704A); 
+  final Color surfacePink = const Color(0xFFFAF0F3); 
 
   @override
   Widget build(BuildContext context) {
-    // --- DATA LIST ---
-    // 'About Framework7' sudah dihapus dari array ini agar bisa berdiri sendiri
+    
+    
     final List<String> components = [
       'Accordion', 'Action Sheet', 'Appbar', 'Area Chart', 
       'Autocomplete', 'Badge', 'Buttons', 'Calendar / Date Picker', 'Cards', 
@@ -68,7 +68,7 @@ class ElementsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // JUDUL HALAMAN
+              
               const Text(
                 "Framework7",
                 style: TextStyle(
@@ -79,14 +79,14 @@ class ElementsPage extends StatelessWidget {
               ),
               const SizedBox(height: 25),
 
-              // ABOUT (Berdiri sendiri di dalam kotak pink)
+              
               _buildPinkCardContainer(
-                // Tambahkan context di sini
+                
                 child: _buildGroupedItem(context, "About Framework7"),
               ),
               const SizedBox(height: 30),
 
-              // SECTION: COMPONENTS
+              
               _buildSectionTitle("Components"),
               const SizedBox(height: 15),
               _buildPinkCardContainer(
@@ -95,14 +95,14 @@ class ElementsPage extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(), 
                   itemCount: components.length,
                   itemBuilder: (context, index) {
-                    // Tambahkan context di sini
+                    
                     return _buildGroupedItem(context, components[index]);
                   },
                 ),
               ),
               const SizedBox(height: 35),
 
-              // SECTION: THEMES
+              
               _buildSectionTitle("Themes"),
               const SizedBox(height: 10),
               ListView.builder(
@@ -110,13 +110,13 @@ class ElementsPage extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: themes.length,
                 itemBuilder: (context, index) {
-                  // Tambahkan context di sini
+                  
                   return _buildStandardItem(context, themes[index]);
                 },
               ),
               const SizedBox(height: 35),
 
-              // SECTION: PAGE LOADERS & ROUTER
+              
               _buildSectionTitle("Page Loaders & Router"),
               const SizedBox(height: 10),
               ListView.builder(
@@ -124,7 +124,7 @@ class ElementsPage extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: pageLoaders.length,
                 itemBuilder: (context, index) {
-                  // Tambahkan context di sini
+                  
                   return _buildStandardItem(context, pageLoaders[index]);
                 },
               ),
@@ -136,9 +136,9 @@ class ElementsPage extends StatelessWidget {
     );
   }
 
-  // --- WIDGET HELPER ---
+  
 
-  // Membuat teks header untuk setiap section
+  
   Widget _buildSectionTitle(String title) {
     return Text(
       title,
@@ -150,7 +150,7 @@ class ElementsPage extends StatelessWidget {
     );
   }
 
-  // Membuat wadah/kotak dengan background pink muda dan sudut melengkung
+  
   Widget _buildPinkCardContainer({required Widget child}) {
     return Container(
       decoration: BoxDecoration(
@@ -161,7 +161,7 @@ class ElementsPage extends StatelessWidget {
     );
   }
 
-  // Membuat custom icon kopi dengan garis kuning di bawahnya
+  
   Widget _buildCustomCoffeeIcon() {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -184,11 +184,11 @@ class ElementsPage extends StatelessWidget {
     );
   }
 
-  // Membuat baris item dengan ikon kopi kustom, ditambah navigasi
-  Widget _buildGroupedItem(BuildContext context, String title) { // Context ditambahkan
+  
+  Widget _buildGroupedItem(BuildContext context, String title) { 
     return InkWell(
       onTap: () {
-        // LOGIKA NAVIGASI
+        
         if (title == "About Framework7") {
           Navigator.push(
             context,
@@ -227,11 +227,11 @@ class ElementsPage extends StatelessWidget {
     );
   }
 
-  // Membuat baris item standar (Untuk Themes & Page Loaders), ditambah navigasi
-  Widget _buildStandardItem(BuildContext context, String title) { // Context ditambahkan
+  
+  Widget _buildStandardItem(BuildContext context, String title) { 
     return InkWell(
       onTap: () {
-        // Karena ini Themes dan Page Loaders, arahkan semua ke NotFoundPage
+        
         Navigator.push(
           context,
           MaterialPageRoute(builder: (_) => const NotFoundPage()),

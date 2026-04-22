@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class DeliveryTrackingPage extends StatelessWidget {
   const DeliveryTrackingPage({super.key});
 
-  final Color primaryGreen = const Color(0xFF00704A); // Hijau utama
+  final Color primaryGreen = const Color(0xFF00704A); 
   final Color buttonGreen = const Color(
     0xFF2E8B57,
-  ); // Hijau tombol telepon/chat
+  ); 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      // --- APP BAR ---
+      
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -39,17 +39,17 @@ class DeliveryTrackingPage extends StatelessWidget {
         centerTitle: true,
       ),
 
-      // --- BODY ---
+      
       body: Stack(
         children: [
-          // 1. PETA (MAP BACKGROUND)
+          
           Positioned(
             top: 0,
             left: 0,
             right: 0,
-            bottom: 250, // Memberikan ruang untuk panel bawah
+            bottom: 250, 
             child: Image.asset(
-              'assets/maps.png', // Pastikan gambar peta tersedia di assets
+              'assets/maps.png', 
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) => Container(
                 color: Colors.blueGrey.shade50,
@@ -63,19 +63,19 @@ class DeliveryTrackingPage extends StatelessWidget {
             ),
           ),
 
-          // 2. BUBBLE ESTIMATED TIME (Melayang di atas peta)
+          
           Positioned(
             top: MediaQuery.of(context).size.height * 0.25,
             left: MediaQuery.of(context).size.width * 0.35,
             child: Stack(
               clipBehavior: Clip.none,
               children: [
-                // Segitiga kecil (Ekor bubble)
+                
                 Positioned(
                   top: -6,
                   left: 20,
                   child: Transform.rotate(
-                    angle: 0.785398, // Rotasi 45 derajat
+                    angle: 0.785398, 
                     child: Container(
                       width: 20,
                       height: 20,
@@ -83,7 +83,7 @@ class DeliveryTrackingPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Kotak Bubble Utama
+                
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 24,
@@ -126,7 +126,7 @@ class DeliveryTrackingPage extends StatelessWidget {
             ),
           ),
 
-          // 3. BOTTOM PANEL (Panel Hijau dan Putih)
+          
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -140,16 +140,16 @@ class DeliveryTrackingPage extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // --- BAGIAN HIJAU (INFO KURIR) ---
+                  
                   Padding(
                     padding: const EdgeInsets.fromLTRB(24, 24, 24, 30),
                     child: Row(
                       children: [
-                        // Foto Kurir
+                        
                         ClipRRect(
                           borderRadius: BorderRadius.circular(25),
                           child: Image.asset(
-                            'assets/kurir.webp', // Ganti dengan path gambar kurir
+                            'assets/kurir.webp', 
                             width: 50,
                             height: 50,
                             fit: BoxFit.cover,
@@ -167,7 +167,7 @@ class DeliveryTrackingPage extends StatelessWidget {
                         ),
                         const SizedBox(width: 16),
 
-                        // Nama & ID
+                        
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,7 +192,7 @@ class DeliveryTrackingPage extends StatelessWidget {
                           ),
                         ),
 
-                        // Tombol Call
+                        
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
@@ -207,7 +207,7 @@ class DeliveryTrackingPage extends StatelessWidget {
                         ),
                         const SizedBox(width: 12),
 
-                        // Tombol Chat
+                        
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
@@ -224,7 +224,7 @@ class DeliveryTrackingPage extends StatelessWidget {
                     ),
                   ),
 
-                  // --- BAGIAN PUTIH (TIMELINE LOKASI) ---
+                  
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.fromLTRB(24, 30, 24, 40),
@@ -237,14 +237,14 @@ class DeliveryTrackingPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Titik 1: Sweet Corner St.
+                        
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
                               padding: const EdgeInsets.all(12),
                               decoration: const BoxDecoration(
-                                color: Color(0xFFE1F0E5), // Latar hijau terang
+                                color: Color(0xFFE1F0E5), 
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
@@ -283,7 +283,7 @@ class DeliveryTrackingPage extends StatelessWidget {
                           ],
                         ),
 
-                        // Garis putus-putus
+                        
                         Container(
                           margin: const EdgeInsets.only(left: 23),
                           height: 30,
@@ -300,7 +300,7 @@ class DeliveryTrackingPage extends StatelessWidget {
                           ),
                         ),
 
-                        // Titik 2: Ombe Coffee Shop
+                        
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

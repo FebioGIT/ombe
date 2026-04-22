@@ -8,9 +8,9 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
-  final Color primaryGreen = const Color(0xFF00704A); // Hijau khas Ombe Coffee
+  final Color primaryGreen = const Color(0xFF00704A); 
 
-  // Data dummy untuk notifikasi
+  
   final List<Map<String, dynamic>> notifications = [
     {
       "title": "Apply Success",
@@ -45,7 +45,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade50, // Background abu-abu sangat muda
+      backgroundColor: Colors.grey.shade50, 
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -99,7 +99,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
     );
   }
 
-  // Komponen pembuat kartu notifikasi
+  
   Widget _buildNotificationCard({
     required String title,
     required String body,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// Pastikan path import ini benar sesuai lokasi file blog_detail_page.dart Anda
+
 import 'blog_detail_page.dart';
 
 class BlogPage extends StatelessWidget {
@@ -18,9 +18,9 @@ class BlogPage extends StatelessWidget {
       "Americano",
     ];
 
-    // DATA LIST SUDAH DIPERBAIKI
-    // Judul disesuaikan dengan desain, dan gambar menggunakan kopi2.png
-    // agar langsung muncul di HP Anda tanpa error.
+    
+    
+    
     final List<Map<String, String>> blogs = [
       {
         "title": "Nature's Ingredients",
@@ -105,7 +105,7 @@ class BlogPage extends StatelessWidget {
               children: tags.map((tag) => _buildTag(tag)).toList(),
             ),
             const SizedBox(height: 25),
-            // Menggunakan Column untuk List Blog agar tidak error scrolling
+            
             Column(
               children: blogs.map((blog) {
                 return _buildBlogCard(
@@ -156,7 +156,7 @@ class BlogPage extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors
-              .grey[800], // Fallback color agar teks putih tetap terlihat jika error
+              .grey[800], 
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
             image: AssetImage(imageUrl),
@@ -164,7 +164,7 @@ class BlogPage extends StatelessWidget {
             colorFilter: ColorFilter.mode(
               Colors.black.withOpacity(
                 0.5,
-              ), // Sedikit digelapkan agar teks terbaca
+              ), 
               BlendMode.darken,
             ),
           ),

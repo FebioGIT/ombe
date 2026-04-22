@@ -27,7 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 const SizedBox(height: 20),
 
-                // ☕ LOGO
+                
                 Row(
                   children: const [
                     Icon(Icons.local_cafe, color: primary),
@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 30),
 
-                // TITLE
+                
                 const Text(
                   "Create an account",
                   style: TextStyle(
@@ -62,7 +62,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 30),
 
-                // USERNAME
+                
                 const Text("Username", style: TextStyle(color: Colors.grey)),
                 const SizedBox(height: 8),
 
@@ -75,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 20),
 
-                // EMAIL
+                
                 const Text("Email", style: TextStyle(color: Colors.grey)),
                 const SizedBox(height: 8),
 
@@ -88,7 +88,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 20),
 
-                // PASSWORD
+                
                 const Text("Password", style: TextStyle(color: Colors.grey)),
                 const SizedBox(height: 8),
 
@@ -114,7 +114,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 30),
 
-                // 🔘 SIGN UP BUTTON
+                
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -126,7 +126,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                     onPressed: () {
-                      // 🔥 BALIK KE LOGIN
+                      
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text("Account created successfully"),
@@ -147,7 +147,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 20),
 
-                // TERMS
+                
                 const Center(
                   child: Text.rich(
                     TextSpan(

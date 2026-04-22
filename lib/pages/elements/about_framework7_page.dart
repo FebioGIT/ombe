@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AboutFramework7Page extends StatelessWidget {
   const AboutFramework7Page({super.key});
 
-  final Color primaryGreen = const Color(0xFF00704A); // Hijau tema Ombe
+  final Color primaryGreen = const Color(0xFF00704A); 
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ class AboutFramework7Page extends StatelessWidget {
       style: const TextStyle(
         fontSize: 15,
         color: Colors.black87,
-        height: 1.6, // Memberikan jarak antar baris yang nyaman dibaca
+        height: 1.6, 
       ),
     );
   }

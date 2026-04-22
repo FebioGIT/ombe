@@ -18,12 +18,12 @@ class LoginChoicePage extends StatelessWidget {
             children: [
               const Spacer(),
 
-              // ☕ LOGO
+              
               const Icon(Icons.local_cafe, size: 80, color: primary),
 
               const SizedBox(height: 12),
 
-              // TITLE
+              
               const Text(
                 "Ombe",
                 style: TextStyle(
@@ -41,7 +41,7 @@ class LoginChoicePage extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              // TAGLINE
+              
               const Text(
                 "Morning begins with Ombe coffee",
                 textAlign: TextAlign.center,
@@ -53,7 +53,7 @@ class LoginChoicePage extends StatelessWidget {
 
               const SizedBox(height: 50),
 
-              // 🔘 LOGIN EMAIL
+              
               _button(
                 context: context,
                 text: "Login With Email",
@@ -64,7 +64,7 @@ class LoginChoicePage extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              // 🔘 FACEBOOK
+              
               _button(
                 context: context,
                 text: "Login With Facebook",
@@ -75,7 +75,7 @@ class LoginChoicePage extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              // 🔘 GOOGLE
+              
               _button(
                 context: context,
                 text: "Login With Google",
@@ -93,7 +93,7 @@ class LoginChoicePage extends StatelessWidget {
     );
   }
 
-  // ================= NAVIGATION =================
+  
   void _goToLogin(BuildContext context) {
     Navigator.push(
       context,
@@ -103,7 +103,7 @@ class LoginChoicePage extends StatelessWidget {
     );
   }
 
-  // ================= BUTTON =================
+  
   Widget _button({
     required BuildContext context,
     required String text,
